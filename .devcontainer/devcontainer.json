@@ -5,11 +5,12 @@
 		"context": "..",
 		// Update 'VARIANT' to pick a Python version. Rebuild the container 
 		// if it already exists to update. Available variants: 3, 3.6, 3.7, 3.8 
-		"args": { "VARIANT": "3.7" }
+		"args": {
+			"VARIANT": "3.8"
+		}
 	},
-
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
@@ -22,20 +23,18 @@
 		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
 		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
 		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
-		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [9000],
-
+	"forwardPorts": [
+		9000
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install -r requirements.txt",
-
 	// Comment out to connect as root instead.
 	"remoteUser": "vscode"
 }
